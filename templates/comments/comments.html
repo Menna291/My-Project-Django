@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Experiences</title>
+</head>
+<body>
+    <h1>Experiences</h1>
+    {% for comment in comments %}
+        <div class="comment">
+            <p>{{ comment.name }}:</p>
+            <p>{{ comment.body }}</p>
+            <p>Posted on: {{ comment.created_at }}</p>
+            <br>
+        </div>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
+
+    <hr>
+
+    <!-- Comment Form -->
+    <h2></h2>
+    <form action="{% url 'comments' %}" method="post">
+        {% csrf_token %}
+        
+    </form>
+</body>
+</html>

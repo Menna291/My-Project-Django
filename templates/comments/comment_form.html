@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Experience</title>
+</head>
+<body>
+    <h1>Add Your Experience</h1>
+    <form action="{% url 'comments' %}" method="post">
+        {% csrf_token %}
+        <label for="id_name"> Name:</label><br>
+        {{ form.name }}
+        <br>
+        <label for="id_email"> Email (optional):</label><br>
+        {{ form.email }}
+        <br>
+        <label for="id_body">Your Comment:</label><br>
+        {{ form.body }}
+        <br>
+       
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
